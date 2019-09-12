@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+    <title>Intro to the Command Line ~ Powercoders</title>
+
+    <meta name="description" content="An introduction to the Unix Shell Command Line Interface">
+    <meta name="author" content="based on Girl Develop It San Francisco">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<link rel="stylesheet" href="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/reset.css">
+		<link rel="stylesheet" href="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/reveal.css">
+    <link rel="stylesheet" href="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/powercoders.css" id="theme">
+
+    <link rel="icon" type="image/x-icon" href="https://www.xn--erklr-mir-mal-efb.ch/img/favicon.png">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/zenburn.css">
+    <link rel="stylesheet" type="text/css" href="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/all.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script><link rel="stylesheet" type="text/css" href="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/paper.css">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]--><script type="text/javascript" src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/highlight.html"></script><script type="text/javascript" src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/search.html"></script><script type="text/javascript" src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/zoom.html"></script><script type="text/javascript" src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/notes.html"></script>
+	<script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script><script>window.__ikihefjapmkjipaiafghlnndpbcdooccInit = true;</script></head>
+
+  <body>
+
+    <div class="reveal slide center has-horizontal-slides ready" role="application" data-transition-speed="default" data-background-transition="fade" style="">
+      <div class="slides" style="width: 960px; height: 700px; inset: 50% auto auto 50%; transform: translate(-50%, -50%) scale(1.3056);">
+        <section style="top: 71px; display: none;" class="past" aria-hidden="true" data-index-h="0" hidden="">
+					<img src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/powercoders-logo.svg" alt="Powercoders" class="noborder">
+          <h1>Intro to the Command&nbsp;Line</h1>
+        </section>
+
+        <section style="top: 114.5px; display: none;" class="past" data-index-h="1" aria-hidden="true" hidden="">
+          <h2>Agenda</h2>
+          <h6>This class will be a combination of lecture + exercises</h6>
+          <ul>
+            <li>Command line "lingo"</li>
+            <li>Why use the command line?</li>
+            <li>Working with folder directories</li>
+            <li>Working with files</li>
+            <li>Working with commands</li>
+            <li>Troubleshooting</li>
+          </ul>
+        </section>
+
+        <section style="top: 98.5px; display: none;" class="past" data-index-h="2" aria-hidden="true" hidden="">
+          <h2>From the beginning ...</h2>
+          <ul>
+            <li class="fragment visible" data-fragment-index="0"><code>Machine</code> is the physical computer and hardware (disks, keyboard, etc)</li>
+            <li class="fragment visible" data-fragment-index="1">It runs an <code>Operating System</code>, which manages access to everything</li>
+            <li class="fragment visible" data-fragment-index="2">You interact with the OS through the <code>shell</code></li>
+            <li class="fragment visible" data-fragment-index="3">You use the shell to tell the operating system which programs to run, it runs them</li>
+            <li class="fragment visible" data-fragment-index="4">The shell is just another program</li>
+          </ul>
+        </section>
+
+        <section style="top: 123px; display: none;" class="past" data-index-h="3" aria-hidden="true" hidden="">
+          <h2>Two types of Shell</h2>
+          <ul>
+            <li>Graphical</li>
+            <li class="fragment visible" data-fragment-index="0">Command line <span class="fragment visible" data-fragment-index="1"><br>aka</span>
+              <ul class="fragment visible" data-fragment-index="2">
+                  <li>Terminal</li>
+                  <li>Command prompt</li>
+                  <li>Console</li>
+                  <li>CLI</li>
+              </ul>
+            </li>
+
+          </ul>
+        </section>
+
+        <section style="top: 113px; display: none;" class="past" data-index-h="4" aria-hidden="true" hidden="">
+          <h2>When will I use this?</h2>
+          <p>You might use the command line to...</p>
+          <ul>
+            <li>Use version control (like Git)</li>
+            <li class="fragment visible" data-fragment-index="0">Run build tools and site generators</li>
+            <li class="fragment visible" data-fragment-index="1">Serve a website locally while developing</li>
+            <li class="fragment visible" data-fragment-index="2">Automate file actions with a script</li>
+            <li class="fragment visible" data-fragment-index="3">Control other computers</li>
+            <li class="fragment visible" data-fragment-index="4">Play games (like a nerd)</li>
+          </ul>
+        </section>
+
+        <section style="top: 122px; display: none;" class="past" data-index-h="5" aria-hidden="true" hidden="">
+          <h2>What is a Terminal?</h2>
+          <p>A text-based command interpreter.</p>
+          <p class="fragment visible" data-fragment-index="0">Windows:
+            <code><i class="fab fa-windows"></i></code>, type <code>cmd</code>
+          </p>
+          <p class="fragment visible" data-fragment-index="1">OS X: 
+            <code>⌘</code> + <code>Space</code>, type <code>terminal</code>
+          </p>
+          <p class="fragment visible" data-fragment-index="2"><br>Visual Studio Code has an integrated terminal.</p>
+        </section>
+
+        <section style="top: 106px; display: none;" class="past" data-index-h="6" aria-hidden="true" hidden="">
+          <h2>Prompt</h2>
+          <ul class="container">
+            <li class="col"><img src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/windows-cmd-screenshot.jpg" alt="Windows Command Line prompt"></li>
+            <li class="col"><img src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/osx-terminal-screenshot.png" alt="OS X Command Line prompt"></li>
+          </ul>
+        </section>
+          
+        <section style="top: 207px; display: none;" class="past" data-index-h="7" aria-hidden="true" hidden="">
+          <h2>Prompt</h2>
+          <p>Usually shows your username and computer name.</p>
+          <p>Indicates that the terminal is ready for a command.</p>
+        </section>
+        
+        <section style="top: 207px; display: none;" class="past" data-index-h="8" aria-hidden="true" hidden="">
+          <h2>Cursor</h2>
+          <p>Indicates your current spot in the terminal.</p>
+          <p>Shows you where the stuff you type will go.</p>
+        </section>
+
+        <section style="top: 206px; display: none;" class="past" data-index-h="9" aria-hidden="true" hidden="">
+            <h2>Tutorials</h2>
+            <ul>
+              <li>Windows: <a href="https://www.youtube.com/playlist?list=PL6gx4Cwl9DGDV6SnbINlVUd0o2xT4JbMu">1 hour playlist of tutorial videos</a></li>
+              <li>OS X: <a href="https://openclassrooms.com/en/courses/4614926-learn-the-command-line-in-terminal">Learn the command line</a></li>              
+              <li>Both: <a href="https://tutorial.djangogirls.org/en/intro_to_command_line/">Introduction to the CLI</a></li>              
+            </ul>
+        </section>
+
+        <section style="top: 181.5px; display: none;" class="past" data-index-h="10" aria-hidden="true" hidden="">
+          <h2>Try It: Your First Commands</h2>
+          <ol>
+            <li>Open your terminal.</li>
+            <li>Type <code>echo hello</code> into your terminal and press <strong>enter</strong>.</li>
+            <li>Type <code>pwd</code> into your terminal and press <strong>enter</strong>.</li>
+            <li>Type <code>clear</code> into your terminal and press <strong>enter</strong>.</li>
+          </ol>
+        </section>
+
+        <section style="top: 125px; display: none;" class="past" data-index-h="11" aria-hidden="true" hidden="">
+          <h2>Commands &amp; Arguments</h2>
+          <p>Many commands take one or more <strong>arguments</strong>, which come after the command, and give detail about what the command should do.</p>
+          <p>For example, <code>echo</code> takes an argument representing the text to be repeated.</p>
+          <pre><code>$ <span class="built_in">echo</span> <span class="string">"This is an argument."</span></code></pre>
+        </section>
+
+        <section style="top: 133.5px; display: none;" class="past" data-index-h="12" aria-hidden="true" hidden="">
+          <h3><code>clear</code></h3>
+          <p>The <code>clear</code> command clears the contents of the terminal and issues a prompt.</p>
+          <p>This is good for removing previous output that is unnecessary to the task at hand.</p>
+          <p>Feel free to use this whenever things get too cluttered.</p>
+        </section>
+
+        <section style="top: 268.5px; display: none;" class="past" data-index-h="13" aria-hidden="true" hidden="">
+          <h2>Working with Directories</h2>
+        </section>
+  
+        <section style="top: 176.5px; display: none;" class="past" data-index-h="14" aria-hidden="true" hidden="">
+          <h2>The Current Directory</h2>
+          <h4><code>pwd</code></h4>
+          <p>(Print Working Directory)</p>
+          <p>Type it whenever you want to see what directory (folder) you’re in.</p>
+        </section>
+
+        <section style="top: 81.5px; display: none;" class="past" data-index-h="15" aria-hidden="true" hidden="">
+          <h3><code>pwd</code></h3>
+          <p>(Print Working Directory)</p>
+          <img src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/terminal-pwd.png" alt="Your first command, pwd">
+        </section>
+
+        <section style="top: 207px; display: none;" class="past" data-index-h="16" aria-hidden="true" hidden="">
+          <h2>Directories</h2>
+          <p>Also referred to as "folders".</p>
+          <p>A directory is a container for files or other directories.</p>
+        </section>
+
+        <section style="top: 186px; display: none;" class="past" data-index-h="17" aria-hidden="true" hidden="">
+          <h2>Directory Trees</h2>
+          <p>The set of all folders, taken together, makes up your entire file system.</p>
+          <p>This system is organized into a kind of upside down tree.</p>
+        </section>
+
+        <section style="top: 37.5px; display: none;" class="past" data-index-h="18" aria-hidden="true" hidden="">
+          <h2>Directory Trees</h2>
+          <p>At the very top of the tree is the root folder.</p>
+          <img src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/unix-filesystem.png" alt="Unix file directory system">
+        </section>
+
+        <section style="top: 131px; display: none;" class="past" data-index-h="19" aria-hidden="true" hidden="">
+          <h2>Paths</h2>
+          <p>Nested files and directories can be referenced using <strong>paths</strong>.</p>
+          <p>Each directory or file is separated by a forward slash <code>/</code></p>
+          <p>There are two kinds of paths:</p>
+          <ul>
+            <li>Relative: <code>Desktop/the_project/overview.txt</code></li>
+            <li>Absolute: <code>/Users/Susanne/Desktop/logo.png</code></li>
+          </ul>
+        </section>
+
+        <section style="top: 175px; display: none;" class="past" data-index-h="20" aria-hidden="true" hidden="">
+          <h3><code>cd</code></h3>
+          <p>The <code>cd</code> command changes the current working directory.</p>
+          <p>It expects a file path as an argument.</p>
+          <p>If no file path is given, it assumes your home directory by default.</p>
+        </section>
+
+        <section style="top: 101.5px; display: none;" class="past" data-index-h="21" aria-hidden="true" hidden="">
+          <h3><code>cd</code></h3>
+          <img src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/command-line-cd.png" alt="Command line cd">
+        </section>
+
+        <section style="top: 119px; display: none;" class="past" data-index-h="22" aria-hidden="true" hidden="">
+          <h2>Shortcuts</h2>
+          <ul>
+            <li>Current Directory: <code>.</code></li>
+            <li>Parent Directory: <code>..</code></li>
+            <li>Home Directory: <code>~</code></li>
+            <li>Previous Directory: <code>-</code></li>
+          </ul>
+          <p>Bonus: Drag a folder into the terminal to show its path.<br>
+            <small>(Only works in Visual Studio Code in Windows.)</small></p>
+        </section>
+  
+        <section style="top: 175px; display: none;" class="past" data-index-h="23" aria-hidden="true" hidden="">
+          <h2>List</h2>
+          <p>The <code>ls</code> command lists the contents of a directory.</p>
+          <p>It expects a file path as an argument.</p>
+          <p>If no file path is given, it assumes the current directory by default.</p>
+        </section>
+
+        <section style="top: 129px; display: none;" class="past" data-index-h="24" aria-hidden="true" hidden="">
+          <h3><code>ls</code></h3>
+          <img src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/command-line-ls.png" alt="Command line ls">
+        </section>
+
+        <section style="top: 132px; display: none;" class="past" data-index-h="25" aria-hidden="true" hidden="">
+          <h2>Flags</h2>
+          <p>The <code>ls</code> command accepts several option flags.</p>
+          <p>A <strong>flag</strong> is a special argument that is used to set an option for the command.</p>
+          <p>These are commonly a hyphen followed by a single character (e.g. <code>-g</code>)</p>
+        </section>
+
+        <section style="top: 35.5px; display: none;" class="past" data-index-h="26" aria-hidden="true" hidden="">
+          <h3><code>ls -l</code></h3>
+          <p>Setting the <code>-l</code> flag on the <code>ls</code> command causes it to provide more verbose (long) output.</p>
+          <img src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/command-line-ls-l.png" alt="Command line ls with flags">
+        </section>
+
+        <section style="top: 90px; display: none;" class="past" data-index-h="27" aria-hidden="true" hidden="">
+          <h2>Hidden Files</h2>
+          <p>Filenames that begin with a period are hidden from normal output.</p>
+          <p>e.g. ".bashrc"</p>
+          <p>Use the <code>ls</code> command with the <code>-a</code> flag to see hidden files in addition to the usual output.</p>
+          <p>Type <code>ls -la</code> into your terminal.</p>
+          <p>Use the <code>-h</code> flag to get human readable file sizes.</p>
+        </section>
+
+        <section style="top: 83.5px; display: none;" class="past" data-index-h="28" aria-hidden="true" hidden="">
+          <h3><code>ls -la</code></h3>
+          <img src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/command-line-hidden-files.png" alt="Command line hidden files using flag -la">
+        </section>
+
+        <section style="top: 175.5px; display: none;" class="past" data-index-h="29" aria-hidden="true" hidden="">
+          <h2>Tab Completion</h2>
+          <p>Tab completion autocompletes commands and filenames.</p>
+          <ul>
+            <li>Pressing <strong>tab</strong> once autocompletes a unique instance.</li>
+            <li>If there's more than one possible completion, pressing <strong>tab</strong> twice gives you all the options available.</li>
+          </ul>
+        </section>
+
+        <section style="top: 34px; display: none;" class="past" data-index-h="30" aria-hidden="true" hidden="">
+          <h2>Try It Yourself</h2>
+          <p>Play with the <code>cd</code> and <code>ls</code> commands.<br>
+             Be sure to incorporate:</p>
+          <ul>
+            <li>relative and absolute file path</li>
+            <li>the <code>.</code> shortcut</li>
+            <li>the <code>..</code> shortcut</li>
+            <li>the <code>~</code> shortcut</li>
+            <li><code>cd</code> without an argument</li>
+          </ul>
+          <p>Use <code>pwd</code> to check your location periodically.</p>
+          <p>Use Tab completion to autocomplete commands and filenames.</p>
+        </section>
+
+        <section style="top: 143px; display: none;" class="past" data-index-h="31" aria-hidden="true" hidden="">
+          <h2>Make a Directory</h2>
+          <p>Use <code>mkdir</code> to create a new empty directory.</p>
+          <p>Pass the path of the directory name as the first argument.</p>
+          <p class="fragment visible" data-fragment-index="0">If the base of the path doesn't already exist, the command will fail.</p>
+          <p class="fragment visible" data-fragment-index="1">Use the <code>-p</code> flag to create the full path if non-existent.</p>
+        </section>
+
+        <section style="top: 142px; display: none;" class="past" data-index-h="32" aria-hidden="true" hidden="">
+          <h3><code>mkdir</code></h3>
+          <img src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/command-line-mkdir.png" alt="Command line make directory">
+        </section>
+
+        <section style="top: 204.5px; display: none;" class="past" data-index-h="33" aria-hidden="true" hidden="">
+          <h2>Remove a Directory</h2>
+          <p>Use <code>rmdir</code> to remove an empty directory.</p>
+          <p>Use <code>rm -r</code> to remove a non-empty directory.</p>
+        </section>
+
+        <section style="top: 107.5px; display: none;" class="past" data-index-h="34" aria-hidden="true" hidden="">
+          <h3><code>rmdir</code></h3>
+          <img src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/command-line-rmdir.png" alt="Command line remove directory">
+        </section>
+
+        <section style="top: 120.5px; display: none;" class="past" data-index-h="35" aria-hidden="true" hidden="">
+          <h2>Try It Yourself</h2>
+          <ol>
+            <li><code>cd</code> to your home directory.</li>
+            <li>Create the <strong>powercoders/develop</strong> directory path.</li>
+            <li>Navigate into the <strong>powercoders/develop</strong> directory.</li>
+            <li>Create the <strong>it</strong> directory.</li>
+            <li>Navigate up two directories.</li>
+            <li>Use the <code>pwd</code> command to verify you are home.</li>
+            <li>Remove the <strong>powercoders/develop/it</strong> path.</li>
+          </ol>
+        </section>
+
+        <section style="top: 66px; display: none;" class="past" data-index-h="36" aria-hidden="true" hidden="">
+          <h2>Try It Yourself</h2>
+          <img src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/exercise1-answer.png" alt="Exercise 1 answer">
+        </section>
+
+        <section style="top: 268.5px; display: none;" class="past" data-index-h="37" aria-hidden="true" hidden="">
+          <h2>Working with Files</h2>
+        </section>
+
+        <section style="top: 153px; display: none;" class="past" data-index-h="38" aria-hidden="true" hidden="">
+          <h2>Create a File</h2>
+          <p>Use <code>touch</code> to create a new file.</p><br>
+          <p>The <code>touch</code> touch command expects the name of your new file as an argument.</p>
+        </section>
+
+        <section style="top: 122px; display: none;" class="past" data-index-h="39" aria-hidden="true" hidden="">
+          <h3><code>touch</code></h3>
+          <h4>(create a file)</h4>
+          <img src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/command-line-touch.png" alt="touch">
+        </section>
+
+        <section style="top: 81.5px; display: none;" class="past" data-index-h="40" aria-hidden="true" hidden="">
+          <h2>Copy a File</h2>
+          <p>Use <code>cp</code> to copy a file.</p>
+          <p>The <code>cp</code> command takes two arguments:</p>
+          <ul>
+            <li>1st argument = the "origin" file</li>
+            <li>2nd argument = the "destination" file</li>    
+          </ul>
+          <pre><code contenteditable="">$ cp resume.txt resume-copy.txt</code></pre>
+          <p>Use <code>cp -R</code> to copy a whole directory and all files in it.</p>
+        </section>
+
+        <section style="top: 85.5px; display: none;" class="past" data-index-h="41" aria-hidden="true" hidden="">
+          <h3><code>cp</code></h3>
+          <h4>(copy a file)</h4>
+          <h5><code contenteditable="">cp origin destination</code></h5>
+          <img src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/command-line-cp.png" alt="cp">
+        </section>
+
+        <section style="top: 88.5px; display: none;" class="past" data-index-h="42" aria-hidden="true" hidden="">
+          <h3><code>cp -R</code></h3>
+          <h4>(copy a whole directory)</h4>
+          <h5><code contenteditable="">cp -R origin destination</code></h5>
+          <img src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/command-line-cp-r.png" alt="cp">
+        </section>
+      
+        <section style="top: 81.5px; display: none;" class="past" data-index-h="43" aria-hidden="true" hidden="">
+          <h2>Moving (or Renaming) a File/Directory</h2>
+
+          <p>Use <code>mv</code> to move a file or directory.</p>
+          <p>The <code>mv</code> command takes two arguments:</p>
+          <ul>
+            <li>1st argument = the "origin"</li>
+            <li>2nd argument = the "destination"</li>    
+          </ul>
+          <p>If the destination is a filename, the file will be renamed.</p>
+        </section>
+
+        <section style="top: 149.5px; display: none;" class="past" data-index-h="44" aria-hidden="true" hidden="">
+          <h2>Move a File/Directory</h2>
+          <h5><code>mv origin destination</code></h5>
+
+          <img src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/terminal-mvfile.png" alt="move file/directory">
+        </section>
+
+        <section style="top: 121px; display: none;" class="past" data-index-h="45" aria-hidden="true" hidden="">
+          <h2>Rename a File/Directory</h2>
+          <h5><code>mv origin destination(filename)</code></h5>
+
+          <img src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/terminal-renamefile.png" alt="rename file/directory">
+        </section>
+
+        <section style="top: 183.5px; display: none;" class="past" data-index-h="46" aria-hidden="true" hidden="">
+          <h2>Remove a File</h2>
+          <p>Use <code>rm</code> to remove a file.</p>
+          <p>The <code>rm</code> command takes the name of the file you are removing as an argument.</p>
+        </section>
+
+        <section style="top: 122px; display: none;" class="past" data-index-h="47" aria-hidden="true" hidden="">
+          <h3><code>rm</code></h3>
+          <h4>(remove a file)</h4>
+
+          <img src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/terminal-rmfile.png" alt="remove a file">
+        </section>
+
+        <section style="top: 81.5px; display: none;" class="past" data-index-h="48" aria-hidden="true" hidden="">
+          <h2>Try It Yourself</h2>
+          <ol>
+            <li>Create a folder called <strong>cli</strong>.</li>
+            <li>Make that folder your current working directory.</li>
+            <li>Create two files: <strong>file1.txt</strong>, <strong>file2.txt</strong>.</li>
+            <li>Copy <strong>file1.txt</strong> and call the copy <strong>file3.txt</strong>.</li>
+            <li>Create a directory called <strong>folder1</strong>.</li>
+            <li>Move <strong>file1.txt</strong> into <strong>folder1</strong>.</li>
+            <li>List the contents of <strong>folder1</strong> without going into it.</li>
+            <li>Rename <strong>file1.txt</strong> to <strong>myfile.txt</strong>.</li>
+            <li>Remove the directory <strong>folder1</strong>, including the file inside.</li>
+          </ol>
+        </section>
+
+        <section style="top: 121px; display: none;" class="past" data-index-h="49" aria-hidden="true" hidden="">
+          <h2>Read a File</h2>
+          <p><small>(Sadly, this does not work in Windows. 😞)</small></p>
+          <p>Use <code>cat</code> to output the contents of a file to the console.</p>
+          <p>Use <code>more</code> to step through the contents of a file one screen at a time.</p>
+          <p>Use <code>less</code> to step backwards or forwards.</p>
+        </section>
+
+        <section style="top: 154px; display: none;" class="past" data-index-h="50" aria-hidden="true" hidden="">
+          <h2>Open a File/Directory</h2>
+          <p>Use <code>open</code> to open a file or directory in its default app—the equivalent of double-clicking it.</p>
+          <p class="fragment visible" data-fragment-index="0"><small>(Sadly, this does not work in Windows. 😞)</small></p>
+          <p class="fragment visible" data-fragment-index="1">Pass the path of the file or directory name as the argument.</p>
+        </section>
+
+        <section style="top: 106.5px; display: none;" class="past" data-index-h="51" aria-hidden="true" hidden="">
+          <h2>Open a File/Directory</h2>
+          <p>Use <code>code .</code> to open the current directory in VSC.</p>
+          <p>Use <code>code</code> plus filename to open a specific file of the current dirctory in Visual Studio Code (VSC).</p>
+          <img src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/launch-vsc.png" alt="Launch visual studio code">
+        </section>
+
+        <section style="top: 4px; display: none;" class="past" data-index-h="52" aria-hidden="true" hidden="">
+          <h2>Edit a File</h2>
+          <p>You can use various editors built into bash, including <code>vi</code> and <code>nano</code>.</p>
+          <p>Enter the editor command and the file path:</p>
+          <pre><code contenteditable="">$ nano myfile.txt</code></pre>
+          <p>Or on a Mac, you can open with any desktop app:</p>
+          <pre><code contenteditable="">open -a TextEdit myfile.txt</code></pre>
+          <p>Or with the default editor:</p>
+          <pre><code contenteditable="">$ open -t myfile.txt</code></pre>
+        </section>
+  
+        <section style="top: 141.5px; display: none;" class="past" data-index-h="53" aria-hidden="true" hidden="">
+          <h2>Try It Yourself</h2>
+          <ol>
+            <li>Navigate to the <strong>cli</strong> directory you made before.</li>
+            <li>Use <code>vi</code> or <code>nano</code> to add a few sentences to <strong>file2.txt</strong>, then exit and save.</li>
+            <li>Mac users, read the new contents of <strong>file2.txt</strong> in your terminal.</li>
+            <li>Everyone, try using <code>code</code> to open <strong>file2.txt</strong> in Visual Studio Code.</li>
+          </ol>
+        </section>
+
+        <section style="top: 268.5px; display: none;" class="past" data-index-h="54" aria-hidden="true" hidden="">
+          <h2>Working with Commands</h2>
+        </section>
+    
+        <section style="top: 164.5px; display: none;" class="past" data-index-h="55" aria-hidden="true" hidden="">
+          <h2>Command Line Movement</h2>
+          <ul>
+            <li><b>ctrl-a</b>: jump to beginning of line</li>
+            <li><b>alt-f</b>: jump forward a word</li>
+            <li><b>alt-b</b>: jump back a word</li>
+            <li><b>alt-d</b>: delete word</li>
+            <li><b>alt-t</b>: transpose two words</li>
+          </ul>
+        </section>
+
+        <section style="top: 121.5px; display: none;" class="past" data-index-h="56" aria-hidden="true" hidden="">
+          <h2>More Command Line Movement</h2>
+          <ul>
+            <li>The <code>←</code> and <code>→</code> arrow keys let you edit within a command</li>
+            <li>The <code>↑</code> and <code>↓</code> arrow keys let you select previous commands</li>
+            <li><code>tab</code> auto-completes filenames and directories</li>
+          </ul>
+          <br>
+          <pre>            <code>$ cd ~/pr[TAB]ojects/ac[TAB]medesign/doc[TAB]umentation/</code>
+          </pre>
+        </section>
+
+        <section style="top: 92px; display: none;" class="past" data-index-h="57" aria-hidden="true" hidden="">
+          <h2>Command Line History</h2>
+          <p>Use the <code>history</code> command to see a list of all your previous commands.</p>
+          <p>Each command will be listed next to a line number.</p>
+          <p>A few history-related commands:</p>
+          <ul>
+            <li><b>!!</b>: Latest command</li>
+            <li><b>!54</b>: Command by line number</li>
+            <li><b>!code</b>: Command matching a string</li>
+          </ul>
+        </section>
+
+        <section style="top: 152.5px; display: none;" class="past" data-index-h="58" aria-hidden="true" hidden="">
+          <h3><code>history</code></h3>
+          <img src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/command-line-history.png" alt="history">
+        </section>
+
+        <section style="top: 76.5px; display: none;" class="past" data-index-h="59" aria-hidden="true" hidden="">
+          <h2>Try It Yourself</h2>
+          <ol>
+            <li>Use your <code>up</code> and <code>down</code> arrows to locate a past command with one or more arguments.</li>
+            <li>Move your cursor to the beginning of the line.</li>
+            <li>Move your cursor from word to word to the end of the line.</li>
+            <li>Change one of the arguments and run it.</li>
+            <li>Run the <code>date</code> command.</li>
+            <li>Re-run the command from step 4 using <code>!</code>.</li>
+            <li>Time the execution of your original command by running <code>time !!</code>.</li>
+          </ol>
+        </section>
+
+        <section style="top: 217px; display: none;" class="past" data-index-h="60" aria-hidden="true" hidden="">
+          <h2>Real World Examples</h2>
+          <p>Let's revisit the use cases from the beginning of class and go into more detail.</p>
+        </section>
+
+        <section style="top: 126px; display: none;" class="past" data-index-h="61" aria-hidden="true" hidden="">
+          <h2>Version Control</h2>
+          <p>Though you can do a lot with GUI tools for Git, there are some functions that still require the command line.</p>
+          <pre><code>$ git pull upstream master</code></pre>
+          <p>Git is the next topic you will learn later today.<br>Check out <a href="https://try.github.io/" target="_blank">Try Git</a> for an intro.</p>
+        </section>
+
+        <section style="top: 35px; display: none;" class="past" data-index-h="62" aria-hidden="true" hidden="">
+          <h2>Run Build Tools</h2>
+          <p>Build tools process your code to make it more efficient or to automate repeated tasks.</p>
+          <p>For example, you can use tools like <a href="https://webpack.js.org/api/cli/">webpack</a> to combine multiple JS files into one "minified" file.</p>
+          <pre><code>$ webpack ./src/index.js dist/bundle.js</code></pre>
+          <p><a href="https://www.staticgen.com/">Static Site Generators</a> like <a href="https://jekyllrb.com/">Jekyll</a> build websites using templates, avoiding duplicated html.</p>
+          <pre><code>jekyll build</code></pre>
+        </section>
+
+        <section style="top: 64.5px; display: none;" class="past" data-index-h="63" aria-hidden="true" hidden="">
+          <h2>Serve up a Directory</h2>
+          <p>When working on a website locally, you can run a simple 
+server program on your computer so you can browse the site over http 
+instead of the file protocol.</p>
+          <p>This example uses a built-in function of Python:</p>
+          <pre><code>$ python -m simpleHTTPServer</code></pre>
+          <p>Most build tools also include a local server function.</p>
+          <p>To stop a running server, press <strong>Ctrl + C</strong>.</p>
+        </section>
+
+        <section style="top: 126px; display: none;" class="past" data-index-h="64" aria-hidden="true" hidden="">
+          <h2>Automate with scripts</h2>
+          <p>You can write or find scripts to batch process files.</p>
+          <p>for example, this <a href="https://github.com/atramos/chase-bank-PDF-to-QIF">open source script</a> parses PDF bank statements and converts the data to a format that can be imported into banking software:</p>
+          <pre><code>$ perl chase-bank-PDF-to-QIF.pl -oChase2018.qif ~/statements/*.pdf</code></pre>
+        </section>
+  
+        <section style="top: 74.5px; display: none;" class="past" data-index-h="65" aria-hidden="true" hidden="">
+          <h2>Control other computers</h2>
+          <p>These "other" computers might be:</p>
+          <ul>
+            <li>A cloud environment like Cloud9</li>
+            <li>A remote server</li>
+            <li>A virtual machine or container on your own computer</li>
+            <li>A very simple computer like a raspberry pi</li>
+          </ul>
+          <pre><code>$ ssh gdi@192.168.0.23</code></pre>
+          <p><small>Or it could be a <a href="https://xkcd.com/530/">very complicated doorbell alternative</a></small></p>
+        </section>
+
+        <section style="top: 248px; display: none;" class="past" data-index-h="66" aria-hidden="true" hidden="">
+          <h2>Deploy on Netlify</h2>
+          <a href="https://www.netlify.com/blog/2019/05/28/deploy-in-seconds-with-netlify-cli/" target="_blank">Tutorial</a>
+        </section>
+
+        <section style="top: 268.5px; display: none;" class="past" data-index-h="67" aria-hidden="true" hidden="">
+          <h2>Troubleshooting</h2>
+        </section>
+
+        
+        <section style="top: 136.5px; display: none;" class="past" data-index-h="68" aria-hidden="true" hidden="">
+          <h2>What can go wrong?</h2>
+          <ul>
+            <li>Mis-spell a command: <code>aaaaaaaa</code> ('a' x 8)</li>
+            <li><code>cd</code> in to a directory that does not exist</li>
+            <li><code>cd ...</code></li>
+            <li><code>cd .</code></li>
+            <li><code>cd</code> <i><code>filename</code></i></li>
+            <li><code>rmdir aaaaaaaa</code></li>
+          </ul>
+        </section>
+  
+        <section style="top: 109.5px; display: block;" class="past" data-index-h="69" aria-hidden="true" hidden="">
+          <h2>Where's the prompt?!</h2>
+          <p>Different processes have different ways of exiting back to the prompt. If you're stuck, try one of these:</p>
+          <ul>
+            <li><b>ctrl + c</b></li>
+            <li><b>ctrl + x</b></li>
+            <li><code>q</code></li>
+            <li><code>:q</code></li>
+            <li><b>esc</b> key, then <code>:q</code></li>
+          </ul>
+        </section>
+
+        <section style="top: 77px; display: block;" class="past" data-index-h="70" aria-hidden="true" hidden="">
+          <h3><code>command not found</code></h3>
+          <p>If you receive a <code>command not found</code> error message, check for typos!</p>
+          <p class="fragment visible" data-fragment-index="0">Otherwise, you may need to install the software that uses the command.</p>
+          <div class="fragment visible" data-fragment-index="1">
+            <p>Try searching online for:</p>
+            <blockquote>"how to install [command-name-here] on [Mac/Windows/Linux]"</blockquote>
+          </div>
+        </section>
+
+        <section style="top: 27px; display: block;" class="present" data-index-h="71">
+          <h2>Cheatsheet</h2>
+          <table>
+            <colgroup>
+              <col class="org-left">            
+              <col class="org-left">            
+              <col class="org-left">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col" class="org-left">Action</th>
+                <th scope="col" class="org-left">Windows</th>
+                <th scope="col" class="org-left">OS X</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="org-left">Print working directory</td>
+                <td class="org-left"><code>cd</code></td>
+                <td class="org-left"><code>pwd</code></td>
+              </tr>              
+              <tr>
+                <td class="org-left">List directory contents</td>
+                <td class="org-left"><code>dir</code></td>
+                <td class="org-left"><code>ls</code></td>
+              </tr>
+              <tr>
+                <td class="org-left">Change to a subdirectory</td>
+                <td class="org-left"><code>cd</code> <small><code>dir</code></small></td>
+                <td class="org-left"><code>cd</code> <small><code>dir</code></small></td>
+              </tr>              
+              <tr>
+                <td class="org-left">Go up a directory</td>
+                <td class="org-left"><code>cd ..</code></td>
+                <td class="org-left"><code>cd ..</code></td>
+              </tr>
+              <tr>
+                <td class="org-left">Create a directory</td>
+                <td class="org-left"><code>mkdir</code> <small><code>dir</code></small></td>
+                <td class="org-left"><code>mkdir</code> <small><code>dir</code></small></td>
+              </tr>
+              <tr>
+                <td class="org-left">Delete a directory</td>
+                <td class="org-left"><code>rmdir</code> <small><code>dir</code></small></td>
+                <td class="org-left"><code>rmdir</code> <small><code>dir</code></small></td>
+              </tr>
+            </tbody>
+          </table>
+          <p>... and many more on <a href="https://www.xn--erklr-mir-mal-efb.ch/handouts/01-CLI-cheatsheet.pdf" target="_blank">following cheat sheet</a></p>
+        </section>
+
+      </div><!-- Close slides -->
+
+      <footer>
+        <div class="copyright">
+          © 2019 Powercoders ZRH
+        </div>
+      </footer>
+    <div class="progress" style="display: block;"><span style="width: 1920px;"></span></div><aside class="controls" style="display: block;" data-controls-layout="bottom-right" data-controls-back-arrows="faded"><button class="navigate-left enabled" aria-label="previous slide"><div class="controls-arrow"></div></button><button class="navigate-right" aria-label="next slide" disabled="disabled"><div class="controls-arrow"></div></button><button class="navigate-up" aria-label="above slide" disabled="disabled"><div class="controls-arrow"></div></button><button class="navigate-down" aria-label="below slide" disabled="disabled"><div class="controls-arrow"></div></button></aside><div class="slide-number" style="display: none;"></div><div class="speaker-notes" data-prevent-swipe="" tabindex="0"></div><div class="pause-overlay"><button class="resume-button">Resume presentation</button></div><div style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);" id="aria-status-div" aria-live="polite" aria-atomic="true">
+          Cheatsheet
+          
+            
+                          
+                          
+              
+            
+            
+              
+                Action
+                Windows
+                OS X
+              
+            
+            
+              
+                Print working directory
+                cd
+                pwd
+                            
+              
+                List directory contents
+                dir
+                ls
+              
+              
+                Change to a subdirectory
+                cd dir
+                cd dir
+                            
+              
+                Go up a directory
+                cd ..
+                cd ..
+              
+              
+                Create a directory
+                mkdir dir
+                mkdir dir
+              
+              
+                Delete a directory
+                rmdir dir
+                rmdir dir
+              
+            
+          
+          ... and many more on following cheat sheet
+        </div><div class="backgrounds"><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: none;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background past" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div><div class="slide-background present" style="display: block;" data-loaded="true"><div class="slide-background-content"></div></div></div></div><!-- Close reveal -->
+
+    
+		<script src="Intro%20to%20the%20Command%20Line%20~%20Powercoders_files/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+  
+
+</body></html>

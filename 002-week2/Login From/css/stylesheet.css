@@ -1,0 +1,89 @@
+body {
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+main {
+    width: 800px;
+    margin: 0 auto;
+}
+
+main form {
+    width: 320px;
+    padding: 40px;
+}
+main form i{
+    font-size: 90px;
+    color: #a482f0;
+}
+main img, main form {
+    float: left;
+}
+
+.wrap {
+    background-color: #fff;
+    
+    border-radius: 5\px;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.12);
+    float: left;
+}
+
+label {
+    min-width: 100px;
+    float: left;
+}
+
+.mg40 {
+    margin: 40px 0;
+}
+
+#inputForm {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: block;
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 10px;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 45px;
+}
+
+#sub {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #7053ae;
+    padding: 10px 35px;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+}
+
+#sub:hover {
+    color: black;
+    background: #4ba4e9;
+}
+
+#clearButton {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #a482F0;
+    padding: 10px 35px;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+}
+
+#clearButton:hover {
+    color: black;
+    background: #4ba4e9;
+}

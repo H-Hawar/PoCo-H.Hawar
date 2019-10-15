@@ -1,0 +1,471 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    color: #999999;
+    line-height: 32px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #333333;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    background-repeat: no-repeat;
+}
+
+.logo {
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding-top: 8px;
+}
+
+
+/* .container a.logo {
+    
+} */
+
+header {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+header nav {
+    display: block;
+    padding: 15px 0 0 0;
+}
+
+header nav ul {
+    list-style: none;
+    float: right;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    padding: 0 25px;
+}
+
+header nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 15px 0;
+    transition: 0.4s all ease;
+    position: relative;
+    display: block;
+}
+
+header nav ul li a:after,
+header nav ul li.active a:after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    transition: 0.4s all ease;
+    background-color: #fce38a;
+}
+
+header nav ul li a:hover:after,
+header nav ul li.active a:after {
+    width: 100%;
+}
+
+header nav ul li a:hover,
+header nav ul li.active a {
+    color: #fce38a;
+}
+
+header nav ul li:last-child a:after,
+header nav ul li:nth-last-child(2) a:after {
+    display: none;
+}
+
+header nav ul li:nth-last-child(2) {
+    padding-right: 0;
+}
+
+header nav ul li.active a {
+    font-weight: bold;
+}
+
+header nav ul li:last-child a {
+    padding-right: 0;
+}
+
+
+/* slider section */
+
+.img-responsive {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+.banner {
+    position: relative;
+    z-index: 0;
+    /* background: url(../img/Layer15.png); */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.banner::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    content: "";
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f38181+0,fce38a+100&0.9+0,0.9+100 */
+    background: -moz-linear-gradient(top, rgba(243, 129, 129, 0.9) 0%, rgba(252, 227, 138, 0.9) 70%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(243, 129, 129, 0.9) 0%, rgba(252, 227, 138, 0.9) 70%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(243, 129, 129, 0.9) 0%, rgba(252, 227, 138, 0.9) 70%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#e6f38181', endColorstr='#e6fce38a', GradientType=0);
+    /* IE6-9 */
+}
+
+.banner_content {
+    text-align: center;
+    padding: 160px 0;
+}
+
+.banner_content h1 {
+    font-size: 120px;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding: 0;
+    margin: 0;
+    line-height: 110px;
+    color: white;
+}
+
+.banner_content h2 {
+    font-size: 55px;
+    font-weight: 400;
+    padding: 0;
+    color: white;
+}
+
+.subtitle {
+    font-family: 'Kaushan Script', cursive;
+}
+
+.diver {
+    width: 80px;
+    height: 3px;
+    margin: 50px auto;
+    clear: both;
+}
+
+.diver.light {
+    background: white;
+}
+
+.diver.dark {
+    background: #f38181;
+}
+
+.btn {
+    text-decoration: none;
+    color: white;
+    border: 3px solid white;
+    font-weight: 700;
+    padding: 10px 40px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+
+.btn:after {
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 0;
+    top: 0;
+    left: 0;
+    transition: 0.4s all ease;
+    background: white;
+    z-index: -1;
+}
+
+.btn:hover:after {
+    width: 100%;
+}
+
+.btn:hover {
+    color: #f38181;
+}
+
+.banner .controller {
+    margin: 0 0 30px 0;
+    padding: 0;
+}
+
+.banner .controller li {
+    position: relative;
+    list-style: none;
+    display: inline-block;
+    width: 24%;
+    text-align: left;
+    padding-right: 10px;
+    opacity: 0.6;
+    color: white;
+    font-size: 1.2rem;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.banner .controller li::before {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: calc(100% - 10px);
+    top: 0;
+    left: 0;
+    background: white;
+}
+
+.banner .controller li.active {
+    opacity: 1;
+}
+
+.banner .controller li:after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    top: 0;
+    left: 0;
+}
+
+.banner .controller li.active:after {
+    background: #f38181;
+    animation: timer 5s 1;
+}
+
+@keyframes timer {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: calc(100% - 10px);
+    }
+}
+
+.banner .controller li:last-child {
+    padding-right: 0;
+}
+
+.banner .controller li span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.slider {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    top: -57px;
+    list-style: none;
+}
+
+.slider li {
+    display: none;
+}
+
+.slider li img {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+
+/* about section */
+
+section {
+    padding: 90px 0;
+}
+
+.section_title {
+    text-align: center;
+    /* margin-bottom: 100px; */
+}
+
+.section_title h3 {
+    font-family: 'Kaushan Script';
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.section_title h2 {
+    font-family: 'Montserrat';
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.section_title p {
+    margin-bottom: 100px;
+}
+
+.about ul {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.about ul li {
+    background: #95e1d3;
+    list-style: none;
+    display: inline-block;
+    margin: 0 8px;
+    max-height: 250px;
+}
+
+.about ul li a {
+    position: relative;
+    max-height: 250px;
+    display: block;
+    transition: 0.4s all ease;
+}
+
+.about ul li a:after {
+    transition: 0.4s all ease;
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.about ul li a:hover {
+    right: 10px;
+    transition: 0.4s all ease;
+    bottom: 10px;
+}
+
+.about ul li a:hover:after {
+    top: 0;
+    right: 0;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f38181+0,fce38a+100&0.9+0,0.9+100 */
+    background: -moz-linear-gradient(top, rgba(243, 129, 129, 0.9) 0%, rgba(252, 227, 138, 0.9) 70%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(243, 129, 129, 0.9) 0%, rgba(252, 227, 138, 0.9) 70%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(243, 129, 129, 0.9) 0%, rgba(252, 227, 138, 0.9) 70%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#e6f38181', endColorstr='#e6fce38a', GradientType=0);
+}
+
+.counter_up ul {
+    text-align: center;
+    width: 100%;
+    height: 285px;
+    background: #95e1d3;
+}
+
+.counter_up ul li {
+    max-width: 1200px;
+    list-style: none;
+    display: inline-block;
+    font-family: 'Montserrat';
+    text-align: center;
+    color: white;
+    border-right: 0.5px solid rgb(230, 222, 222);
+    width: 240px;
+    padding: 90px 0;
+}
+
+.counter_up ul li:last-child {
+    padding-right: 0;
+    border-right: 0.5px solid rgb(230, 222, 222);
+}
+
+.counter_up ul li:first-child {
+    border-left: 0.5px solid rgb(230, 222, 222);
+}
+
+.counter_up ul li span {
+    font-size: 50px;
+    font-weight: 800;
+    padding-bottom: 28px;
+}
+
+.counter_up ul li p {
+    font-size: 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.service {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.service ul li {
+    list-style: none;
+    display: inline-block;
+    text-align: left;
+    max-width: 350px;
+    padding-right: 70px;
+}
+
+.section p {
+    text-align: justify;
+}
+
+
+/* Fading animation */
+
+
+/* .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 0.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+} */

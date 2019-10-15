@@ -1,0 +1,117 @@
+    html {
+        background-color: #f7f7f7;
+        text-align: center;
+        font-family: 'Myriad Pro';
+    }
+    
+    body {
+        margin: 0 auto;
+    }
+    
+    section {
+        height: 100vh;
+        width: 100%;
+        position: relative;
+        background-image: url(../img/homeslide_2.jpg);
+        z-index: 0;
+    }
+    
+    section:after {
+        content: "";
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f9c667+0,f79621+100&0.4+0,0.4+100;Orange+3D+%234 */
+        background: -moz-linear-gradient(top, rgba(230, 151, 216, 0.2) 0%, rgba(33, 151, 247, 0.3) 90%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(244, 103, 249, 0.2) 0%, rgba(33, 162, 247, 0.3) 90%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(249, 103, 237, 0.2) 0%, rgba(33, 169, 247, 0.3) 90%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#66f9c667', endColorstr='#66f79621', GradientType=0);
+        /* IE6-9 */
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+    }
+    
+    #logo {
+        position: absolute;
+        margin: auto;
+    }
+    
+    #navlist {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin-top: 2rem;
+        margin-right: 2rem;
+        z-index: 3;
+    }
+    
+    #navlist li {
+        list-style: none;
+        display: inline-block;
+        padding-inline-end: 2rem;
+    }
+    
+    #navlist li a {
+        text-decoration: none;
+        color: #f7f7f7
+    }
+    
+    #navlist li .underline:hover {
+        border-bottom: 2px solid #f7f7f7;
+    }
+    
+    #container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        font-size: 3rem;
+        width: 70%;
+        height: 10rem;
+        line-height: 1rem;
+    }
+    
+    #navlist .icon {
+        width: 1.2em;
+    }
+    
+    #container h2 {
+        font-size: 3rem;
+        color: #f7f7f7;
+    }
+    
+    #container h1 {
+        color: #f7f7f7;
+    }
+    
+    button {
+        color: #f7f7f7;
+        border: 3px solid r#ffffff;
+        font-size: 22px;
+        background: transparent;
+        position: relative;
+        z-index: 4;
+    }
+    
+    #undernav {
+        margin-top: 10rem;
+        bottom: 0;
+    }
+    
+    #undernav li {
+        list-style: none;
+        display: inline-block;
+        padding-left: 5rem;
+    }
+    
+    #undernav li a {
+        text-decoration: none;
+        color: #f7f7f7;
+    }

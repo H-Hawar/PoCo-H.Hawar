@@ -1,0 +1,99 @@
+<!-- code by webdevtrick ( https://webdevtrick.com ) -->
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Home Page</title>
+    <meta name="description" content="Rotating Image Slider with jQuery & CSS3" />
+    <meta name="keywords" content="jquery, rotation, slider, images, slideshow, autoplay, play, pause, css3" />
+    <meta name="author" content="Codrops" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+    <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div id="menu-nav-img">
+            <img src="img/logo.png" alt="" />
+        </div>
+        <div id="menu-nav">
+            <div id="navigation-bar">
+                <ul>
+                    <li>
+                        <a href="#"><i class="fa fa-home"></i> &nbsp; <span>Home</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-handshake"> &nbsp; </i><span>Services</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-user"></i> &nbsp; <span>About</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-book"></i> &nbsp; <span>Contact</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-rss"></i> &nbsp; <span>Blog</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main class="main-container">
+        <div id="mediv">
+            <h2 id="me">Be More, Not Less.</h2>
+        </div>
+        <p id="p">“You learn more from failure than from success; don’t let it stop you. Failure builds character.”</p>
+        <!-- Slide show container -->
+        <div id="container-img">
+            <img id="herbst" src="img/hello.jpeg" alt="Herbst">
+            <div class="middle">
+                <a href="Form.html"> <button class="text"> Join us </button></a>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

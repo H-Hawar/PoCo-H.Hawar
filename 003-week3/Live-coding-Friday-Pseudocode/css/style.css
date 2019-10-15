@@ -1,0 +1,148 @@
+    p::first-line {
+        text-transform: uppercase;
+        color: darkblue;
+        text-align: center;
+        font-weight: bold;
+        font-size: 2rem;
+    }
+    
+    p::first-letter {
+        font-size: 3rem;
+    }
+    
+    p::before {
+        content: "g.g";
+    }
+    
+    p::after {
+        content: "";
+        background: #0f0f0f;
+        display: inline-block;
+        height: 0.4rem;
+        width: 0.4rem;
+    }
+    
+    a,
+    a:link {
+        font-size: 2rem;
+        display: block;
+        color: rgb(41, 2, 133);
+        margin-bottom: 1rem;
+    }
+    
+    a:visited {
+        color: darkred;
+    }
+    
+    a:hover {
+        color: #0bfbbf;
+        text-decoration: none;
+    }
+    
+    a:active {
+        color: mediumvioletred;
+    }
+    
+    a:hover::after {
+        content: "<<<GOOOOOO>>>";
+    }
+    
+    a:first-child {
+        opacity: 0.5;
+        transition: opacity 500ms linear;
+    }
+    
+    a:first-child:hover {
+        opacity: 0;
+        transition: opacity 2s ease-in-out 500ms;
+        s
+    }
+    
+     :required {
+        border: 3px solid black;
+    }
+    
+     :empty {
+        background: #0bfbbf;
+    }
+    
+     :not(:empty) {
+        background-color: white;
+    }
+    
+     :valid {
+        background: white;
+        border-color: rgb(0, 83, 72);
+    }
+    
+    form:invalid {
+        border-color: rgb(160, 29, 121);
+    }
+    
+    input[type="checkbox"] {
+        display: none;
+    }
+    
+    input[type="checkbox"]+label ::before,
+    .checkbox::before {
+        border: 2px solid #000000;
+        content: "";
+        display: inline-block;
+        margin-right: 0.5em;
+        height: 1em;
+        width: 1em;
+    }
+    
+    input[type="checkbox"]:checked+label ::before,
+     :checked+.checkbox::before {
+        background: url(../1.png);
+        background-position: center;
+        background-size: 1.2em;
+    }
+    
+    .square {
+        background-color: #092e25;
+        margin: 50px 50px;
+        height: 5em;
+        width: 5em;
+        /* transition: transform 0.5s ease-in-out 10ms;*/
+        animation: spin 5s linear infinite;
+    }
+    
+    .square:hover {
+        transform: skew(5deg);
+        transform-style: preserve-3d;
+        border-radius: 20px;
+        background-color: rgb(5, 117, 20);
+    }
+    /* new animation definition */
+    
+    @keyframes spin {
+        0% {
+            transform: rotateZ(0);
+        }
+        10% {
+            transform: rotateZ(360deg);
+            background-color: rgb(5, 117, 20);
+        }
+        11% {
+            transform: rotateZ(-360deg);
+            background-color: rgb(106, 117, 5);
+        }
+        22% {
+            transform: rotateZ(360deg);
+            background-color: rgb(117, 41, 5);
+        }
+        44% {
+            transform: rotateZ(-360deg);
+            background-color: rgb(185, 16, 171);
+        }
+        88% {
+            transform: rotateZ(360deg);
+            background-color: rgb(15, 26, 179);
+        }
+        100% {
+            transform: rotateZ(-360deg);
+            background-color: rgb(13, 140, 214);
+        }
+    }

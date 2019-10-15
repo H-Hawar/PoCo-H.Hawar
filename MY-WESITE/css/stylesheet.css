@@ -1,0 +1,177 @@
+body {
+    text-align: center;
+    background-color: #181f27;
+}
+
+
+/* *,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #181f27;
+    font: normal 300 18px "Roboto", sans-serif;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+} */
+
+header {
+    margin-bottom: 9rem;
+}
+
+#menu-nav {
+    max-width: 75%;
+    margin: 5px auto;
+    background-color: #000000;
+    border-radius: 15px;
+    box-shadow: 0 3px 4px rgba(255, 255, 255, 0.3);
+}
+
+#navigation-bar ul {
+    border-radius: 2rem;
+    overflow: auto;
+}
+
+#navigation-bar li {
+    float: left;
+    width: 20%;
+}
+
+#navigation-bar li:hover a::before {
+    right: 0;
+    left: 0;
+}
+
+#navigation-bar a {
+    color: #7da3b3;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px 0;
+    display: block;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+#navigation-bar a:hover {
+    color: #ffffff;
+}
+
+#navigation-bar a::before {
+    content: "";
+    transition: all 0.4s ease-in-out;
+    position: absolute;
+    right: 50%;
+    left: 50%;
+    bottom: 0;
+    height: 2px;
+    background-color: #ffffff;
+}
+
+#navigation-bar a:hover::before {
+    right: 0;
+    left: 0;
+}
+
+li {
+    list-style: none;
+}
+
+#menu-nav-img img {
+    width: 4.3rem;
+    margin-left: 2rem;
+    margin-right: 3rem;
+    margin-top: 0%;
+    float: left;
+    border-radius: 15px;
+}
+
+main {
+    width: 800px;
+    margin: 0 auto;
+}
+
+main form {
+    width: 320px;
+    padding: 40px;
+}
+
+main form i {
+    font-size: 90px;
+    color: #181f27;
+}
+
+main img,
+main form {
+    float: left;
+}
+
+.wrap {
+    background-color: #fff;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.12);
+    float: left;
+}
+
+label {
+    min-width: 100px;
+    float: left;
+}
+
+.mg40 {
+    margin: 40px 0;
+}
+
+#inputForm {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: block;
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 10px;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 45px;
+}
+
+#sub {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #181f27;
+    padding: 10px 35px;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+}
+
+#sub:hover {
+    color: black;
+    background: #4ba4e9;
+}
+
+#clearButton {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #181f27;
+    padding: 10px 35px;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+}
+
+#clearButton:hover {
+    color: black;
+    background: #4ba4e9;
+}

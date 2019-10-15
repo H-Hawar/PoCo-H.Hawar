@@ -1,0 +1,13 @@
+header nav ul li{
+    display: inline-block;
+    padding-left: 30px;
+}
+.size{
+    font-size: 2em;
+}
+.size strong{
+    font-size: 2rem;
+}
+.size p:nth-child(2){
+    font-size: 0.9em;
+}

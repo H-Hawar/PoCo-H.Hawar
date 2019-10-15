@@ -1,0 +1,27 @@
+html {
+    background-color: #f7f7f7;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: 'Myriad Pro';
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.page1 {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+}
+
+.content {
+    flex: 1;
+}
+
+.headfooter {
+    padding: 3rem;
+    text-align: center;
+}

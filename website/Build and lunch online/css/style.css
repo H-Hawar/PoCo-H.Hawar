@@ -1,0 +1,142 @@
+    body {
+        background: #F0f4f4;
+        margin: 0;
+    }
+    
+    .link-title {
+        text-decoration: none;
+        font-size: 24px;
+        color: #444444;
+    }
+    
+    .container {
+        width: 780px;
+        margin: 0 auto;
+        background: #FFF;
+    }
+    
+    .page-heading {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    
+    .header {
+        padding: 45px 0 20px 40px;
+    }
+    
+    .menu {
+        background: #3b7687;
+        padding: 6px 0 6px 40px;
+        color: white;
+    }
+    
+    .menu a {
+        padding: 0 10px;
+        color: #F0f4f4;
+        text-decoration: none;
+        font-size: 13px;
+        font-family: 'MetaOT-Normal', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+    .menu a:hover {
+        color: #cdbed1;
+    }
+    
+    aside {
+        float: left;
+        width: 120px;
+        padding: 30px 0 0 40px;
+    }
+    
+    h1 {
+        margin: 0px;
+        color: #3b7687;
+        font-size: 24px;
+        font-family: 'MetaOT-Bold', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+    h2 {
+        color: #3b7687;
+        font-size: 15px;
+        margin: 20px 0 5px 0;
+    }
+    
+    .main {
+        margin: 0 0 0 180px;
+        padding: 35px 40px 30px 0;
+        color: #444444;
+        font-family: 'MetaOT-Normal', 'MetaOT-Bold', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        line-height: 18px;
+        font-size: 13px;
+    }
+    
+    .main #home-img img {
+        width: 570px;
+        height: 200px;
+    }
+    
+    .main a:hover {
+        color: #cdbed1;
+    }
+    
+    footer {
+        padding: 6px 40px 6px 40px;
+        background: #3b7687;
+        color: white;
+    }
+    
+    footer a {
+        color: #ffffff;
+        text-decoration: none;
+        font-family: 'MetaOT-Normal', 'MetaOT-Bold', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    /* ************About page atyle************ */
+    
+    #about-page #home-img img {
+        width: 70%;
+        float: left;
+        margin-bottom: 20px;
+    }
+    
+    #about-page #profile-info {
+        float: right;
+        width: 20%;
+        margin: 5px;
+    }
+    
+    #about-page .description {
+        clear: both;
+        margin-top: 30px;
+    }
+    /* ********Contact page*************** */
+    
+    #contact-page #form {
+        width: 200;
+        padding: 10px;
+        margin: 0 auto;
+        border: 2px solid #eeecec;
+    }
+    
+    #contact-page #form #divImg {}
+    
+    #contact-page #form input {
+        width: 100%;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        height: 20px;
+        color: #0f0707;
+    }
+    
+    #contact-page #form #message {
+        width: 100%;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        color: #0f0707;
+    }
+    
+    #contact-page #form #submit {
+        height: 30px;
+        background-color: #3b7687;
+        color: #f9f9f9;
+        border-radius: 5px;
+    }

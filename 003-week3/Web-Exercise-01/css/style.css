@@ -1,0 +1,31 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "header header header header" "aside main main main" "footer footer footer footer";
+    height: 100vh;
+    margin: 0 auto;
+}
+
+header {
+    grid-area: header;
+    background-color: brown;
+    height: 200px;
+}
+
+aside {
+    grid-area: aside;
+    background-color: blueviolet;
+    height: 600px;
+}
+
+main {
+    grid-area: main;
+    background-color: #f0f0c3;
+    height: 600px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #ccddee;
+    height: 200px;
+}

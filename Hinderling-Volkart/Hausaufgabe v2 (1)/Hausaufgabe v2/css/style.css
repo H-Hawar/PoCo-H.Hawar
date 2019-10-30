@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'myicon';
+    src: url('../fonts/myicon.ttf?z2kxmu') format('truetype'), url('../fonts/myicon.woff?z2kxmu') format('woff'), url('../fonts/myicon.svg?z2kxmu#myicon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'myicon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-number:before {
+    content: "\e900";
+}
+
+.icon-number1:before {
+    content: "\e901";
+}
+
+.icon-number2:before {
+    content: "\e902";
+}
+
+.icon-number3:before {
+    content: "\e903";
+}
+
+.icon-number4:before {
+    content: "\e904";
+}
+
+.icon-number5:before {
+    content: "\e905";
+}
+
+.icon-number6:before {
+    content: "\e906";
+}
+
+.icon-number7:before {
+    content: "\e907";
+}
+
+.icon-number8:before {
+    content: "\e908";
+}
+
+.icon-number9:before {
+    content: "\e909";
+}
+
+.icon-number10:before {
+    content: "\e90a";
+}
+
+.icon-number11:before {
+    content: "\e90b";
+}
+
+.icon-number12:before {
+    content: "\e90c";
+}
+
+.icon-number13:before {
+    content: "\e90d";
+}
+
+.icon-number14:before {
+    content: "\e90e";
+}
+
+.icon-number15:before {
+    content: "\e90f";
+}
+
+.icon-number16:before {
+    content: "\e910";
+}
+
+.icon-number17:before {
+    content: "\e911";
+}
+
+.icon-number18:before {
+    content: "\e912";
+}
+
+.icon-number19:before {
+    content: "\e913";
+}

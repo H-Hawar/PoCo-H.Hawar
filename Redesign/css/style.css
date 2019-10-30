@@ -1,117 +1,1232 @@
-    html {
-        background-color: #f7f7f7;
-        text-align: center;
-        font-family: 'Myriad Pro';
-    }
+body {
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    color: #999999;
+    line-height: 32px;
+    width: 100%;
+    font-size: 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #333333;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    background-repeat: no-repeat;
+}
+
+.logo {
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding-top: 8px;
+}
+
+
+/* .container a.logo {
     
-    body {
-        margin: 0 auto;
+} */
+
+header {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+header nav {
+    display: block;
+    padding: 15px 0 0 0;
+}
+
+header nav ul {
+    list-style: none;
+    float: right;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul i {
+    position: relative;
+    top: 1.5px;
+}
+
+header nav ul li {
+    display: inline-block;
+    padding: 0 25px;
+}
+
+header nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 15px 0;
+    transition: 0.4s all ease;
+    position: relative;
+    display: block;
+}
+
+header nav ul li a:after,
+header nav ul li.active a:after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    transition: 0.4s all ease;
+    background-color: #fce38a;
+}
+
+header nav ul li a:hover:after,
+header nav ul li.active a:after {
+    width: 100%;
+}
+
+header nav ul li a:hover,
+header nav ul li.active a {
+    color: #fce38a;
+}
+
+header nav ul li:last-child a:after,
+header nav ul li:nth-last-child(2) a:after {
+    display: none;
+}
+
+header nav ul li:nth-last-child(2) {
+    padding-right: 0;
+}
+
+header nav ul li.active a {
+    font-weight: bold;
+}
+
+header nav ul li:last-child a {
+    padding-right: 0;
+}
+
+
+/* slider section */
+
+.img-responsive {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+.banner {
+    position: relative;
+    z-index: 0;
+    /* background: url(../img/Layer15.png); */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.banner::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    content: "";
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f38181+0,fce38a+100&0.9+0,0.9+100 */
+    background: -moz-linear-gradient(top, rgba(243, 129, 129, 0.9) 0%, rgba(252, 227, 138, 0.9) 70%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(243, 129, 129, 0.9) 0%, rgba(252, 227, 138, 0.9) 70%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(243, 129, 129, 0.9) 0%, rgba(252, 227, 138, 0.9) 70%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#e6f38181', endColorstr='#e6fce38a', GradientType=0);
+    /* IE6-9 */
+}
+
+.banner_content {
+    text-align: center;
+    padding: 160px 0;
+}
+
+.banner_content h1 {
+    font-size: 120px;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding: 0;
+    margin: 0;
+    line-height: 110px;
+    color: white;
+}
+
+.banner_content h2 {
+    font-size: 55px;
+    font-weight: 400;
+    padding: 0;
+    color: white;
+}
+
+.subtitle {
+    font-family: 'Kaushan Script', cursive;
+}
+
+.diver {
+    width: 80px;
+    height: 3px;
+    margin: 50px auto;
+    clear: both;
+}
+
+.diver.light {
+    background: white;
+}
+
+.diver.dark {
+    background: #f38181;
+}
+
+.btn {
+    text-decoration: none;
+    color: white;
+    border: 3px solid white;
+    font-weight: 700;
+    padding: 10px 40px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+
+.btn:after {
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 0;
+    top: 0;
+    left: 0;
+    transition: 0.4s all ease;
+    background: white;
+    z-index: -1;
+}
+
+.btn:hover:after {
+    width: 100%;
+}
+
+.btn:hover {
+    color: #f38181;
+}
+
+.banner .controller {
+    margin: 0 0 30px 0;
+    padding: 0;
+}
+
+.banner .controller li {
+    position: relative;
+    list-style: none;
+    display: inline-block;
+    width: 24%;
+    text-align: left;
+    padding-right: 10px;
+    opacity: 0.6;
+    color: white;
+    font-size: 1.2rem;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.banner .controller li::before {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: calc(100% - 10px);
+    top: 0;
+    left: 0;
+    background: white;
+}
+
+.banner .controller li.active {
+    opacity: 1;
+}
+
+.banner .controller li:after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    top: 0;
+    left: 0;
+}
+
+.banner .controller li.active:after {
+    background: #f38181;
+    animation: timer 5s 1;
+}
+
+@keyframes timer {
+    0% {
+        width: 0;
     }
-    
-    section {
-        height: 100vh;
-        width: 100%;
-        position: relative;
-        background-image: url(../img/homeslide_2.jpg);
-        z-index: 0;
+    100% {
+        width: calc(100% - 10px);
     }
-    
-    section:after {
-        content: "";
-        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f9c667+0,f79621+100&0.4+0,0.4+100;Orange+3D+%234 */
-        background: -moz-linear-gradient(top, rgba(230, 151, 216, 0.2) 0%, rgba(33, 151, 247, 0.3) 90%);
-        /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, rgba(244, 103, 249, 0.2) 0%, rgba(33, 162, 247, 0.3) 90%);
-        /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, rgba(249, 103, 237, 0.2) 0%, rgba(33, 169, 247, 0.3) 90%);
-        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#66f9c667', endColorstr='#66f79621', GradientType=0);
-        /* IE6-9 */
-        height: 100vh;
-        width: 100%;
-        position: absolute;
-        z-index: 1;
-        left: 0;
-        top: 0;
+}
+
+.banner .controller li:last-child {
+    padding-right: 0;
+}
+
+.banner .controller li span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.slider {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    top: -57px;
+    list-style: none;
+}
+
+.slider li {
+    display: none;
+}
+
+.slider li img {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+
+/* about section */
+
+section {
+    padding: 90px 0;
+}
+
+.section_title {
+    text-align: center;
+    /* margin-bottom: 100px; */
+}
+
+.section_title h3 {
+    font-family: 'Kaushan Script';
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.section_title h2 {
+    font-family: 'Montserrat';
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.section_title p {
+    margin-bottom: 100px;
+}
+
+.about ul {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.about ul li {
+    background: #95e1d3;
+    list-style: none;
+    display: inline-block;
+    margin: 0 8px;
+    max-height: 250px;
+}
+
+.about ul li a {
+    position: relative;
+    top: 0;
+    left: 0;
+    max-height: 250px;
+    display: block;
+    transition: 0.4s all ease;
+}
+
+.about ul li:hover a {
+    top: -10px;
+    left: -10px;
+}
+
+.about ul li a:after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f38181+0,fce38a+100&0.9+0,0.9+100 */
+    background: -moz-linear-gradient(top, rgba(243, 129, 129, 0.9) 0%, rgba(252, 227, 138, 0.9) 70%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(243, 129, 129, 0.9) 0%, rgba(252, 227, 138, 0.9) 70%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(243, 129, 129, 0.9) 0%, rgba(252, 227, 138, 0.9) 70%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#e6f38181', endColorstr='#e6fce38a', GradientType=0);
+    transition: 0.4s all ease;
+    opacity: 0;
+}
+
+.about ul li:hover a:after {
+    opacity: 1;
+}
+
+.about ul li a span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: white;
+    text-transform: uppercase;
+    font-size: 18PX;
+    white-space: nowrap;
+    font-weight: bold;
+    opacity: 0;
+    transition: 0.4s all ease;
+}
+
+.about ul li a span i {
+    display: block;
+    font-size: 35px;
+}
+
+.about ul li:hover a span {
+    opacity: 1;
+}
+
+
+/****************************************************************/
+
+
+/* counter up section */
+
+.counter_up {
+    background: #95e1d3;
+    padding: 0;
+}
+
+.counter_up ul {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+}
+
+.counter_up ul li {
+    flex: 1;
+    list-style: none;
+    font-family: 'Montserrat';
+    text-align: center;
+    color: white;
+    padding: 90px 0;
+    border-right: 0.5px solid rgb(230, 222, 222);
+}
+
+.counter_up ul li:last-child {
+    border-right: 0.5px solid rgb(230, 222, 222);
+}
+
+.counter_up ul li:first-child {
+    border-left: 0.5px solid rgb(230, 222, 222);
+}
+
+.counter_up ul li span {
+    font-size: 50px;
+    font-weight: 800;
+    padding-bottom: 28px;
+}
+
+.counter_up ul li p {
+    font-size: 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+/* ------------------- Service seciton -----------------*/
+
+.service ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.service ul li i {
+    grid-area: i;
+    font-size: 30px;
+    color: #95e1d3;
+    padding-right: 15px;
+    padding-top: 7px;
+}
+
+.service ul li p {
+    grid-area: p;
+}
+
+.service ul li h4 {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    grid-area: title;
+}
+
+.service ul li {
+    list-style: none;
+    display: grid;
+    padding: 0 14px;
+    grid-template-areas: "i  title  title" "i p p";
+}
+
+.seperator {
+    height: 1px;
+    margin: 50px auto;
+    background-color: #e5e5e5;
+}
+
+
+/* ----------------------------- Unique Design -------------------------------- */
+
+.parallax {
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 0;
+    position: relative;
+    z-index: 0;
+}
+
+.parallax:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.feauture {
+    background-image: url(../img/Layer\ 45.jpg);
+}
+
+.feauture .devices {
+    position: relative;
+    bottom: -69px;
+    display: block;
+    width: 100%;
+    max-width: 642px;
+    margin: 0 auto;
+}
+
+
+/* ------------ what we do ----------- */
+
+.why-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+.why-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* accorodion */
+
+.why-content ul li {
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 10px;
+}
+
+.why-content ul li h3 {
+    margin: 0;
+    padding: 20PX 20px 5px 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.why-content ul li h3 span {
+    position: relative;
+    top: -10px;
+}
+
+.why-content ul li.active h3 {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.why-content ul li h3:after {
+    content: "\2039";
+    transform: rotate(90deg);
+    transition: 0.4s all ease;
+    transform-origin: 5px 18px;
+    font-size: 30px;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    color: #cccccc;
+}
+
+.why-content ul li.active h3:after {
+    content: "\2039";
+    transform: rotate(-90deg);
+    transition: 0.4s all ease;
+    color: #333333;
+}
+
+.why-content ul li p {
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    opacity: 0;
+}
+
+.why-content ul li.active p {
+    /* padding: 40px; */
+    max-height: 115px !important;
+    overflow-y: scroll;
+    margin: 20px;
+    opacity: 1;
+}
+
+.why-content ul li h3 i {
+    font-size: 32px;
+    padding: 0 15px 0 0;
+    color: #95e1d3;
+}
+
+
+/* ------------- Facts section --------------------- */
+
+.facts {
+    background: #f8f8f8;
+}
+
+.facts .container {
+    position: relative;
+}
+
+
+/* Slideshow container */
+
+.testimonial {
+    margin: 0;
+    padding: 0;
+}
+
+.testimonial li small {
+    position: relative;
+    display: block;
+    font-size: 24px;
+    font-family: 'Kaushan Script', cursive;
+    color: #333333;
+    left: 55px;
+    margin-top: 25px;
+}
+
+.testimonial li small:before {
+    position: absolute;
+    content: "";
+    top: calc(50% - 3px);
+    background: #f38181;
+    height: 3px;
+    width: 50px;
+    left: -55px;
+}
+
+
+/* Next & previous buttons */
+
+.testimonial li p {
+    font-size: 18px;
+    font-style: italic;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 150px;
+}
+
+.testimonial li p:before {
+    content: "-";
+    position: absolute;
+    font-size: 65px;
+    padding: 40px 20px;
+    border: 1px solid #95e1d3;
+    color: #95e1d3;
+    font-family: "linea" !important;
+    left: 0;
+    font-style: normal;
+}
+
+.facts .prev,
+.facts .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: #cccccc;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+
+/* Position the "next button" to the right */
+
+.facts .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+
+/* On hover, add a black background color with a little bit see-through */
+
+.facts .prev:hover,
+.facts .next:hover {
+    color: #333333;
+}
+
+
+/* ------------------------   team section ----------------- */
+
+.team ul {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.team ul li:hover {
+    top: -10px;
+    left: -10px;
+}
+
+.team ul li {
+    background: #95e1d3;
+    list-style: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    max-height: 470px;
+    display: inline-block;
+    transition: 0.4s all ease;
+    margin: 0 8px;
+    max-height: 470px;
+}
+
+.team ul li:after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f38181+0,fce38a+100&0.9+0,0.9+100 */
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.9) 0%, rgba(252, 227, 138, 0.9) 70%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(243, 129, 129, 0.9) 0%, rgba(252, 227, 138, 0.9) 70%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(243, 129, 129, 0.9) 0%, rgba(252, 227, 138, 0.9) 70%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#e6f38181', endColorstr='#e6fce38a', GradientType=0);
+    transition: 0.4s all ease;
+    opacity: 0;
+    z-index: 0;
+}
+
+.team ul li:hover:after {
+    opacity: 1;
+}
+
+.companies {
+    background: #f8f8f8;
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.companies img {
+    max-height: 120px;
+}
+
+
+/* responsive grid photos */
+
+.work {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.work .row {
+    display: -ms-flexbox;
+    /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap;
+    /* IE10 */
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+
+/* Create four equal columns that sits next to each other */
+
+.work .column {
+    -ms-flex: 25%;
+    /* IE10 */
+    flex: 25%;
+    max-width: 25%;
+    padding: 0;
+}
+
+.work .column img {
+    vertical-align: middle;
+    width: 100%;
+}
+
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+
+@media screen and (max-width: 800px) {
+    .work .column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
     }
-    
-    #logo {
-        position: absolute;
-        margin: auto;
+}
+
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 600px) {
+    .work .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
     }
-    
-    #navlist {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        margin-top: 2rem;
-        margin-right: 2rem;
-        z-index: 3;
-    }
-    
-    #navlist li {
-        list-style: none;
-        display: inline-block;
-        padding-inline-end: 2rem;
-    }
-    
-    #navlist li a {
-        text-decoration: none;
-        color: #f7f7f7
-    }
-    
-    #navlist li .underline:hover {
-        border-bottom: 2px solid #f7f7f7;
-    }
-    
-    #container {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        margin: auto;
-        font-size: 3rem;
-        width: 70%;
-        height: 10rem;
-        line-height: 1rem;
-    }
-    
-    #navlist .icon {
-        width: 1.2em;
-    }
-    
-    #container h2 {
-        font-size: 3rem;
-        color: #f7f7f7;
-    }
-    
-    #container h1 {
-        color: #f7f7f7;
-    }
-    
-    button {
-        color: #f7f7f7;
-        border: 3px solid r#ffffff;
-        font-size: 22px;
-        background: transparent;
-        position: relative;
-        z-index: 4;
-    }
-    
-    #undernav {
-        margin-top: 10rem;
-        bottom: 0;
-    }
-    
-    #undernav li {
-        list-style: none;
-        display: inline-block;
-        padding-left: 5rem;
-    }
-    
-    #undernav li a {
-        text-decoration: none;
-        color: #f7f7f7;
-    }
+}
+
+
+/* ----------what parallax ------------------- */
+
+.what {
+    background-image: url(../img/Layer\ 53.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 850px;
+    padding-top: 50px;
+    margin-top: 0;
+}
+
+.what .container {
+    text-align: center;
+    overflow: hidden;
+}
+
+.what ul {
+    padding: 0;
+    margin: auto;
+    margin-bottom: 100px;
+    /* display: flex;
+            margin: 0;
+            padding-left: 100px; */
+}
+
+.what ul li {
+    display: inline-block;
+    list-style: none;
+    width: 500px;
+    margin-inline-end: 180px;
+    text-align: left;
+    display: grid;
+    grid-row: auto;
+    grid-column: auto auto;
+    float: left;
+}
+
+.what ul li .left {
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+
+.what ul li .right {
+    float: right;
+    grid-column-start: 2;
+}
+
+.what ul li .diver.dark {
+    margin: 0;
+}
+
+.what ul li:nth-child(2) {
+    padding-right: 0;
+    margin-right: 0;
+}
+
+.what ul li:last-child {
+    padding-right: 0;
+    margin-right: 0;
+}
+
+.what ul li .title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-style: italic;
+}
+
+.what ul li img {
+    margin-right: 20px;
+}
+
+
+/* .service ul li i {
+            grid-area: i;
+            font-size: 30px;
+            color: #95e1d3;
+            padding-right: 15px;
+            padding-top: 7px;
+        }
+        
+        .service ul li p {
+            grid-area: p;
+        } */
+
+
+/* -------------- blogers section ------------------ */
+
+.blogers {}
+
+.bloger ul {
+    text-align: center;
+}
+
+.blogers ul li {
+    position: relative;
+    list-style: none;
+    display: table-cell;
+    padding-right: 35px;
+}
+
+.blogers .list:last-child {
+    padding-right: 0;
+}
+
+.blogers ul li::before {
+    content: "Jan";
+    width: 60px;
+    height: 70px;
+    position: absolute;
+    z-index: 6;
+    left: 1px;
+    left: 4px;
+    bottom: 40%;
+    color: white;
+    font-family: Montserrat, 'Myriad Pro';
+    font-weight: lighter;
+    font-size: 14px;
+    color: white;
+}
+
+.blogers ul li::after {
+    content: "15";
+    background-color: #95e1d3;
+    height: 70px;
+    width: 60px;
+    position: absolute;
+    z-index: 5;
+    left: -15px;
+    bottom: 48%;
+    font-family: Montserrat, 'Myriad Pro';
+    font-size: 30px;
+    color: white;
+    line-height: 55px;
+    text-align: center;
+}
+
+.blogers ul li p::before {
+    content: "";
+    background-color: #e7e8ea;
+    width: 380px;
+    height: 1px;
+    position: absolute;
+    z-index: 6;
+    left: 0;
+    bottom: 0;
+}
+
+.blogers ul li:nth-of-type(2)::after {
+    content: "14";
+}
+
+.blogers ul li:nth-of-type(3)::after {
+    content: "12";
+}
+
+.blogers ul li:nth-of-type(1)::before {
+    content: "Jan";
+}
+
+.blogers ul li:nth-of-type(2)::before {
+    content: "Jan";
+}
+
+.blogers ul li:nth-of-type(3)::before {
+    content: "Jan";
+}
+
+
+/* ----------------map section ------------------ */
+
+.map {
+    position: relative;
+    height: 200px;
+    background-image: url(../img/map.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.map a {
+    text-decoration: none;
+}
+
+.map a i {
+    font-size: 30px;
+    color: #f38181;
+    margin-bottom: 0;
+}
+
+.map h3 {
+    font-family: Montserrat, 'Myriad Pro', sans-serif;
+    font-size: 30px;
+    color: #f38181;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.map .diver.diver.dark {
+    margin-top: 30px;
+}
+
+
+/* -------------- footer section ------------ */
+
+footer {
+    background-color: #f8f8f8;
+    padding: 90px 0 0 0;
+}
+
+footer .container {
+    display: grid;
+    grid-gap: 90px;
+    grid-template-columns: minmax(480px, 1fr) 350px 350px;
+}
+
+footer h2 {
+    font-style: normal;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-top: 0;
+}
+
+footer .footer-logo {
+    color: #cccccc;
+    font-size: 46px;
+    text-transform: none;
+    font-weight: bolder;
+}
+
+footer .container .said ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer .container .said ul li {
+    display: grid;
+    grid-row: auto;
+    grid-column: auto auto;
+    grid-gap: 10px;
+    margin-bottom: 10px;
+}
+
+footer .container .said ul li h3 {
+    font-style: normal;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 29px;
+}
+
+footer .container .said ul li img {
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+
+footer .container .said ul li h3 {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    padding: 0;
+    margin: 0;
+}
+
+footer .container .said ul li h3 b {
+    display: block;
+    font-style: italic;
+    color: #999999;
+    font-weight: 300;
+    font-size: 13px;
+}
+
+.instagram {
+    line-height: 18px;
+}
+
+.instagram a {
+    display: block;
+    font-style: italic;
+    color: #333333;
+    font-weight: 300;
+    font-size: 13px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 15px;
+}
+
+.instagram img {
+    height: 90px;
+    width: 90px;
+    padding: 0;
+}
+
+.folowers p {
+    line-height: 28px;
+}
+
+.folowers ul {
+    list-style: none;
+    padding: 15px 0;
+    margin: 0;
+    border-top: 1px solid #dddbdb;
+}
+
+.folowers ul li {
+    display: inline;
+    padding: 6px;
+    color: #999999;
+    font-size: 16px;
+}
+
+.folowers ul #follow-us {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+}
+
+.folowers ul li a {
+    color: #95e1d3;
+    font-size: 18px;
+}
+
+.folowers input[type="email"] {
+    font-family: 'Roboto', sans-serif;
+    padding: 12px;
+    border: 1px solid #e0dede;
+    min-width: 280px;
+}
+
+.folowers input[type="email"]::placeholder {
+    color: #cccccc;
+    text-align: left;
+    font-style: italic;
+}
+
+.folowers .folowers-num {
+    color: #333333;
+    font-size: 18px;
+}
+
+.folowers .folowers-num strong {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.folowers button {
+    background-color: #95e1d3;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 12px 20px;
+    outline: none;
+    border: 1px solid #95e1d3;
+    margin-left: -5px;
+    margin-top: 1px;
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #cccccc;
+    margin: 90px auto 0 auto;
+    max-width: 1200px;
+}
+
+
+/*
+footer .container .folowers {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+footer .container .said {
+    grid-column-start: 3;
+    grid-column-end: 3;
+}
+
+footer .container .instagram {
+    grid-column-start: 4;
+    grid-column-end: 4;
+} */
